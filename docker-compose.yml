@@ -1,0 +1,35 @@
+version: '2'
+
+networks:
+  cluster:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet:  10.0.0.0/24
+        gateway: 10.0.0.1
+
+services:
+  node-1:
+    build: ./src/docker
+    environment:
+      - ENV=docker
+    volumes:
+      - ./build/libs/:/libs/
+    expose:
+      - 5701
+      - 9875
+    networks:
+      - cluster
+
+  node-2:
+    build: ./src/docker
+    environment:
+      - ENV=docker
+    volumes:
+      - ./build/libs/:/libs/
+    expose:
+      - 5701
+      - 9875
+    networks:
+      - cluster

@@ -1,0 +1,32 @@
+task wrapper(type: Wrapper) { gradleVersion = '2.13' }
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'https://s3.amazonaws.com/podbox-repository/public' }
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:$dependencyPluginVersion"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'spring-boot'
+
+repositories { jcenter() }
+
+dependencyManagement {
+    imports {
+        mavenBom "io.spring.platform:platform-bom:$springPlatformVersion"
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'com.hazelcast:hazelcast'
+}
+
+bootRepackage {
+    excludeDevtools = true
+}

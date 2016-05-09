@@ -1,0 +1,9 @@
+.gradle/
+.idea/
+
+build/
+target/
+node_modules/
+
+*.iml
+*.log

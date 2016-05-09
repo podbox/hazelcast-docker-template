@@ -1,0 +1,12 @@
+logging.level:
+  com.podbox: DEBUG
+  com.hazelcast: DEBUG
+  com.hazelcast.cluster: DEBUG
+  org.springframework: WARN
+
+spring:
+  profiles.active: local
+  output.ansi.enabled: always
+  main:
+    banner-mode: "off"
+    web-environment: false
