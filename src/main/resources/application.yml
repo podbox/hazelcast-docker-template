@@ -1,6 +1,6 @@
 logging.level:
-  com.podbox: DEBUG
-  com.hazelcast: DEBUG
+  com.podbox: INFO
+  com.hazelcast: INFO
   com.hazelcast.cluster: DEBUG
   org.springframework: WARN
 

@@ -18,7 +18,6 @@ services:
       - ./build/libs/:/libs/
     expose:
       - 5701
-      - 9875
     networks:
       - cluster
 
@@ -30,6 +29,16 @@ services:
       - ./build/libs/:/libs/
     expose:
       - 5701
-      - 9875
+    networks:
+      - cluster
+
+  node-3:
+    build: ./src/docker
+    environment:
+      - ENV=docker
+    volumes:
+      - ./build/libs/:/libs/
+    expose:
+      - 5701
     networks:
       - cluster

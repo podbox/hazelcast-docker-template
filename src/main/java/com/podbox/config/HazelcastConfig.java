@@ -61,9 +61,6 @@ class HazelcastConfig {
         config.setProperty(GroupProperty.MEMCACHE_ENABLED, "false");
         config.setProperty(GroupProperty.REST_ENABLED, "false");
 
-        config.setProperty(GroupProperty.ENABLE_JMX, "true");
-        config.setProperty(GroupProperty.ENABLE_JMX_DETAILED, "true");
-
         return hazelcast = Hazelcast.newHazelcastInstance(config);
     }
 
